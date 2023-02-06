@@ -1,0 +1,437 @@
+/*
+Potential colors to use if in need of variety:
+#5f2fed
+#4310de
+#3713a1
+#2a03a8
+#470aff
+*/
+
+/* Custom Property Definitions */
+:root {
+    /* Color Variables */
+    --off-white: #fcfcfc;
+    --off-black: #030303;
+
+            --pale-blue: #8e69ff;
+      --very-light-blue: #6c3bff;
+           --light-blue: #470aff;
+       --mid-light-blue: #3500d3;
+             --mid-blue: #240090;
+        --mid-dark-blue: #190061;
+            --dark-blue: #0c0032;
+
+          --pale-accent: var(--pale-blue);
+    --very-light-accent: var(--very-light-blue);
+         --light-accent: var(--light-blue);
+     --mid-light-accent: var(--mid-light-blue);
+           --mid-accent: var(--mid-blue);
+      --mid-dark-accent: var(--mid-dark-blue);
+          --dark-accent: var(--dark-blue);
+
+    /* Other Variables */
+    --url-color: var(--very-light-accent);
+    --url-visited-color: var(--pale-accent);
+    --url-hover-color: var(--off-white);
+
+    --text-color: var(--off-black);
+
+    --header-align: left;
+    --header-indent: 1rem;
+}
+
+/* Theme color palette stuff */
+.pale-accent {
+    background-color: var(--pale-accent);
+}
+
+.very-light-accent {
+    background-color: var(--very-light-accent);
+}
+
+.light-accent,
+.bright-accent {
+    background-color: var(--light-accent);
+}
+
+.mid-light-accent {
+    background-color: var(--mid-light-accent);
+}
+
+.mid-accent,
+.accent {
+    background-color: var(--mid-accent);
+}
+
+.mid-dark-accent {
+    background-color: var(--mid-dark-accent);
+}
+
+.dark-accent {
+    background-color: var(--dark-accent);
+}
+
+.pale-accent,
+.very-light-accent,
+.light-accent,
+.bright-accent {
+    --url-color: var(--mid-accent);
+    --url-visited-color: var(--dark-accent);
+}
+
+.pale-accent,
+.very-light-accent,
+.light-accent,
+.bright-accent,
+.mid-light-accent,
+.mid-accent,
+.accent,
+.mid-dark-accent,
+.dark-accent,
+.page-foot {
+    --text-color: var(--off-white);
+}
+
+/* Basic layout formatting */
+body {
+    margin: 0;
+    background-color: var(--off-white);
+}
+
+body:last-child {
+    margin-bottom: 1rem;
+}
+
+.page-head > h1 {
+    font-size: 400%;
+    font-family: 'Elianto', 'Oxanium', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+}
+
+.page-head > h1 > div {
+    display: inline-block;
+    padding: 0.25rem 2rem;
+    border-bottom: solid 1rem var(--mid-dark-accent);
+}
+
+.page-content,
+.page-foot {
+    font-family: 'Exo 2', 'Oxanium', sans-serif;
+}
+
+.page-content {
+    margin: 0.75rem 1rem;
+    padding: 1rem 0;
+}
+
+.page-foot {
+    margin: 1rem;
+    padding: 0.125rem 1rem;
+    background-color: var(--light-accent);
+}
+
+.page-content > p,
+.page-foot > p {
+    text-align: justify;
+    text-indent: 2rem;
+}
+
+.page-foot > p {
+    font-size: 95%;
+}
+
+.page-content > *:first-child,
+.page-foot > p:first-child  {
+    margin-top: 0.25rem;
+}
+
+.page-content > *:last-child,
+.page-foot > p:last-child {
+    margin-bottom: 0.25rem;
+}
+
+.page-head,
+.page-foot {
+    --header-align: center;
+    --header-indent: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    --url-color: var(--off-white);
+    --url-visited-color: var(--off-white);
+
+    background-color: var(--dark-accent);
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+
+    position: -webkit-sticky;
+    position:         sticky;
+}
+
+.navbar a {
+    font-family: 'Elianto', 'Oxanium', sans-serif;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+    padding: 0.9rem 1rem;
+    text-decoration: none;
+    background-color: transparent;
+
+    -webkit-transition: background 0.25s, color 0.25s, padding 0.25s;
+         -o-transition: background 0.25s, color 0.25s, padding 0.25s;
+            transition: background 0.25s, color 0.25s, padding 0.25s;
+}
+.navbar a:hover,
+.navbar a:focus {
+    background-color: var(--light-accent);
+    padding: 1rem 1.25rem;
+}
+
+/* Tooltip styling */
+.tooltip-wrapper {
+    --dark-blue: #0c0032b0;
+
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-wrapper > .tooltip {
+    --text-color: var(--off-white);
+
+    color: transparent;
+    overflow-y: auto;
+    display: inline-block;
+    pointer-events: none;
+    text-align: left;
+    max-width: 60vw;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    padding: 5px 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: -5px;
+    left: calc(100% + 0.5ch);
+    z-index: 1;
+
+    width: auto;
+    width: -webkit-fit-content;
+    width:    -moz-fit-content;
+    width:         fit-content;
+
+    height: auto;
+    height: -webkit-fit-content;
+    height:    -moz-fit-content;
+    height:         fit-content;
+
+    background-image: -o-linear-gradient(var(--dark-accent), var(--dark-accent));
+    background-image:   -webkit-gradient(linear, left top, left bottom, from(var(--dark-accent)), to(var(--dark-accent)));
+    background-image:    linear-gradient(var(--dark-accent), var(--dark-accent));
+
+    -webkit-transition: color 0.25s ease 0s, background-size 0.25s ease 0.25s;
+         -o-transition: color 0.25s ease 0s, background-size 0.25s ease 0.25s;
+            transition: color 0.25s ease 0s, background-size 0.25s ease 0.25s;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.tooltip-wrapper:hover > .tooltip {
+    color: var(--text-color);
+    pointer-events: auto;
+    background-size: 100% 100%;
+
+    -webkit-transition: color 0.25s ease 0.25s, background-size 0.25s ease 0s;
+         -o-transition: color 0.25s ease 0.25s, background-size 0.25s ease 0s;
+            transition: color 0.25s ease 0.25s, background-size 0.25s ease 0s;
+}
+
+/* Source view styling */
+#source-view-bkg {
+    --text-color: var(--off-white);
+
+    pointer-events: none;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0006;
+    z-index: 2;
+    overflow: auto;
+
+    -webkit-transition: opacity 0.75s;
+         -o-transition: opacity 0.75s;
+            transition: opacity 0.75s;
+}
+
+#source-view {
+    z-index: 3;
+    background-color: #2a2f37;
+    width: 80%;
+    min-height: 90%;
+    margin: 5% auto;
+    border-radius: 1rem;
+    border: 3px solid var(--mid-accent);
+    padding: 2em;
+
+    height: auto;
+    height: -webkit-fit-content;
+    height:    -moz-fit-content;
+    height:         fit-content;
+}
+
+#source-view > pre.html > code {
+    box-shadow: 0px 0px 8px 0px #21252b inset;
+}
+
+#close-source {
+    z-index: 4;
+    display: inline-block;
+    font-size: 1.5rem;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    float: right;
+    text-align: right;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+#close-source > span.fas {
+    vertical-align: top;
+    font-size: 1em;
+    line-height: 0.7;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 auto;
+    color: var(--light-accent);
+
+    -webkit-transition: color 0.25s ease, transform 0.25s linear, font-size 0.25s linear;
+         -o-transition: color 0.25s ease, transform 0.25s linear, font-size 0.25s linear;
+            transition: color 0.25s ease, transform 0.25s linear, font-size 0.25s linear;
+}
+
+#close-source:hover > span.fas,
+#close-source:focus > span.fas {
+    font-size: 1.25em;
+    color: var(--very-light-accent);
+    transform: rotate(180deg);
+}
+
+#view-source {
+    pointer-events: auto;
+    background-color: #eee;
+    z-index: 1;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border: none;
+    padding: 0.45rem 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px 1px #888;
+
+    -webkit-transition: background 0.25s, color 0.25s, padding 0.25s;
+         -o-transition: background 0.25s, color 0.25s, padding 0.25s;
+            transition: background 0.25s, color 0.25s, padding 0.25s;
+}
+
+#view-source:hover {
+    background-color: var(--light-accent);
+    color: var(--off-white);
+    padding: 0.5625rem 0.625rem;
+    cursor: pointer;
+}
+
+/* Styling to fade in elements on load */
+.fade-in-done {
+    visibility: visible;
+    position: relative;
+    opacity: 1;
+    top: 0;
+
+    -webkit-transition: opacity 1.5s, top 1.5s;
+         -o-transition: opacity 1.5s, top 1.5s;
+            transition: opacity 1.5s, top 1.5s;
+}
+
+.fade-in {
+    visibility: hidden;
+    position: relative;
+    opacity: 0;
+    top: 100px!important;
+}
+
+/* Grid styling */
+.card-grid {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid: 250px / auto auto auto;
+
+}
+
+.card-grid > .card-grid-item {
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px 1px #888;
+    transition: box-shadow 0.25s;
+}
+
+.card-grid > .card-grid-item:hover {
+    box-shadow: 2px 2px 4px 1px #888;
+}
+/* TODO: Finish grid styling */
+
+/* Other styling */
+*:not(a) {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--url-color);
+
+    -webkit-transition: color 0.25s, font-weight 0.25s;
+         -o-transition: color 0.25s, font-weight 0.25s;
+            transition: color 0.25s, font-weight 0.25s;
+}
+
+a:visited {
+    color: var(--url-visited-color);
+}
+
+a:hover,
+a:focus,
+a:visited:hover,
+a:visited:focus {
+    text-decoration: none;
+
+    color: var(--url-hover-color);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Oxanium', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: var(--header-align);
+    text-indent: var(--header-indent);
+}
+
+section > * {
+    margin: 1em 1rem;
+}
