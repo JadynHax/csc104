@@ -1,0 +1,47 @@
+body {
+	/* Change the background color to a parchment-like color just for fun */
+	background: #d6c1a5
+}
+
+h1 {
+	/* Change color of headers to a dark red */
+	color: #541303;
+	/* Give an even darker red text shadow */
+	text-shadow: 1px 1px 1px #1c0601;
+	/* Change font to times new roman */
+	font-family: times new roman, arial;
+}
+
+h1:first-of-type {
+	/* Make head title much bigger for style purposes */
+	font-size: 300%;
+}
+
+/* Same changes as header 1 */
+h2 {
+	color: #541303;
+	text-shadow: 1px 1px 1px #1c0601;
+	font-family: times new roman, arial;
+}
+
+h3 {
+	/* Change color to a lighter red than h1 and h2 */
+	color: #6b1904;
+	font-family: times new roman, arial;
+}
+
+p {
+	/* Change color to a much darker red than h1 and h2 */
+	color: #240a03;
+	font-family: times new roman, arial;
+}
+
+a {
+	/* Medium red unvisited link color */
+	color: #6b1904;
+}
+
+a:visited {
+	/* Bright red visited link color */
+	color: #8f1d06;
+}
